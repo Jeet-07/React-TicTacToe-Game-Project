@@ -1,13 +1,13 @@
 import './App.css'
 import { Board } from './components/Board'
 import {findWinner} from "./components/Winner";
+import StatusMessage from './components/StatusMessage';
 import { useState } from "react";
 function App() {
   const [squares, setSquare] = useState(Array(9).fill(null));
   let [isXNext,setNextTurn] = useState(true);
   const winner = findWinner(squares);
   const nextPlayer = isXNext ? 'X':'O';
-  const statusMessage = winner ? `Winner is ${winner}`:`Next player ${nextPlayer} turn`;
 
   const handleSquareClick = (position)=>{
     if(winner || squares[position])return;
@@ -19,19 +19,14 @@ function App() {
             return val;
         });
     });
-    console.log(winner);
     setNextTurn((currentTurn)=> !currentTurn );
   } 
 
-  function message(){
-    return <div className="message">{statusMessage}</div>;
-  }
-
-  return <>
-    {message()}
+  return <div className="app">
+    <StatusMessage winner={winner} nextPlayer={nextPlayer} squares={squares}/>
     <div>
       <Board squares={squares} handleSquareClick={handleSquareClick}/>
     </div>
-  </>;
+  </div>;
 }
 export default App

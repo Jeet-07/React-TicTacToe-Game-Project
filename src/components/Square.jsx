@@ -1,4 +1,4 @@
 export function Square({square,onclick}){
     return <div className="box" onClick={onclick}>
-    {square}</div>;
+    <span className={square==="X"?"text-green":"text-orange"}>{square}</span></div>;
 }

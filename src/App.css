@@ -1,3 +1,8 @@
+.app{
+  background-color: lightseagreen;
+  height: 100vh;
+  width: 100vw;
+}
 .message{
   font-family: Helvetica;
   font-weight: bold;
@@ -11,7 +16,6 @@
 	height: 300px;
 	margin: 0 auto;
   background-color: #34495e;
-  color: #fff;
   border: 6px solid #2c3e50;
   border-radius: 10px;
 	display: grid;
@@ -28,4 +32,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.text-green{
+  color:springgreen;
+}
+.text-orange{
+  color:orange;
 }
