@@ -1,4 +1,7 @@
-export function Square({square,onclick}){
+export function Square({square,isWinning,onclick}){
+    const winnerAnimate = isWinning ? "winner-animate":'';
+    const XorO = square==="X"?"text-green":"text-orange";
+
     return <div className="box" onClick={onclick}>
-    <span className={square==="X"?"text-green":"text-orange"}>{square}</span></div>;
+    <span className={`${XorO} ${winnerAnimate}`}>{square}</span></div>;
 }

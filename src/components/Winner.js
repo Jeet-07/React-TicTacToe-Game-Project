@@ -11,9 +11,9 @@ export const findWinner = (squares)=>{
     ];
 
     for(const [a,b,c] of winningPositions){
-        if(squares[a]===squares[b] && squares[b]===squares[c])
-            return squares[a];
+        if(squares[a] && squares[a]===squares[b] && squares[b]===squares[c])
+            return {winner:squares[a], winningBoxes:[a,b,c]};
     }
     
-    return null;
+    return {winner:null, winningBoxes:[]};
 }

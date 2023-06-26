@@ -1,8 +1,9 @@
 import { Square } from "./Square";
 
-export function Board({squares,handleSquareClick}){
+export function Board({squares,handleSquareClick,winningBoxes}){
     function renderSquare(position){
-        return <Square square={squares[position]} onclick={()=>{
+        const isWinning = winningBoxes.includes(position);
+        return <Square square={squares[position]} isWinning={isWinning} onclick={()=>{
             handleSquareClick(position);
         }}/>;
     }

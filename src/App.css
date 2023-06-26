@@ -1,13 +1,13 @@
 .app{
   background-color: lightseagreen;
-  height: 100vh;
-  width: 100vw;
+ 
 }
 .message{
   font-family: Helvetica;
   font-weight: bold;
-  font-size: 4em;
+  font-size: 2.5em;
   text-align: center;
+  color:white;
 }
 
 .game-board
@@ -33,10 +33,104 @@
   justify-content: center;
   align-items: center;
 }
-
+.history-grid{
+  width: 400px;
+	margin: 0 auto;
+  background-color: #34495e;
+  border: 6px solid #2c3e50;
+  border-radius: 10px;
+	display: grid;
+}
+.history-moves{
+  border: 3px solid #2c3e50;
+  border-radius: 2px;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .text-green{
   color:springgreen;
 }
 .text-orange{
   color:orange;
+}
+
+.currmove-active{
+  color:red;
+}
+
+.button-reset{
+  background-color: lightseagreen; 
+  border: 2px solid rgb(134, 218, 1);
+  border-radius:10%;
+  color: white;
+  text-align: center;
+  padding:5px 20px;
+  font-size: 20px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.button-reset:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.winner-animate{
+	animation: pulse 0.75s infinite;
+}
+
+@keyframes pulse {
+	0% { color:red; }
+  20% { color:rgb(248, 232, 0); }
+  40% { color:rgb(216, 2, 205); }
+  60% { color:rgb(2, 222, 230); }
+  80% { color:rgb(47, 7, 224); }
+  100% { color:rgb(47, 231, 1); }
+}
+.tic{
+	animation: tic 0.75s infinite;
+}
+
+@keyframes tic {
+	0% { color: blueviolet ; }
+  20% { color:brown; }
+  40% { color: lime; }
+  60% { color:red; }
+  80% { color:yellow; }
+  100% { color:white; }
+}
+.tac{
+	animation: tac 0.75s infinite;
+}
+
+@keyframes tac {
+	0% { color:pink; }
+  20% { color:yellow; }
+  40% { color:white; }
+  60% { color:blue; }
+  80% { color:orange; }
+  100% { color:rgb(47, 231, 1); }
+}
+.toe{
+	animation: toe 0.75s infinite;
+}
+
+@keyframes toe {
+	0% { color:blue; }
+  20% { color:rgb(224, 0, 176); }
+  40% { color:limegreen; }
+  60% { color:orange; }
+  80% { color:white; }
+  100% { color:yellow; }
+}
+
+.creator{
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+  color:white;
 }

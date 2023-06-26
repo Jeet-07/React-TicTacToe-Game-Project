@@ -1,9 +1,11 @@
-const StatusMessage = ({winner,nextPlayer,squares})=>{
+const StatusMessage = ({winner,currState})=>{
+    const {squares,isXNext} = currState;
+    const nextPlayer = isXNext ? 'X':'O'; 
     const noMovesLeft = squares.every((val)=> val !==null);
 
     function renderMessage(){
         if(winner)
-            return <div className="message">
+            return <div className="message tac">
                 Winner is <span className={winner=='X' ? 'text-green':'text-orange'}>{winner}</span>
                 </div>;
         
